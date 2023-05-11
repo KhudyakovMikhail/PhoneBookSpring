@@ -69,6 +69,18 @@ new Vue({
             self.phone = "";
             self.validation = false;
         },
+        removeContact: function (contact) {
+            var self = this;
+
+            $.ajax({
+                type: "POST",
+                url: "/phoneBook/rpc/api/v1/removeContact",
+                contentType: "application/json",
+                data: JSON.stringify(contact.phone)
+            });
+
+            self.loadData();
+        },
         loadData: function () {
             var self = this;
 

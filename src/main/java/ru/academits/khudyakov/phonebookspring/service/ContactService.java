@@ -1,14 +1,19 @@
 package ru.academits.khudyakov.phonebookspring.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import ru.academits.khudyakov.phonebookspring.dao.ContactDao;
 import ru.academits.khudyakov.phonebookspring.model.Contact;
 import ru.academits.khudyakov.phonebookspring.model.ContactValidation;
+import ru.academits.khudyakov.phonebookspring.phonebook.PhoneBookController;
 
 import java.util.List;
 
 @Service
 public class ContactService {
+
+    private static final Logger logger = LoggerFactory.getLogger(ContactService.class);
     private final ContactDao contactDao;
 
     public ContactService(ContactDao contactDao) {
@@ -66,7 +71,7 @@ public class ContactService {
         return contactDao.getAllContacts();
     }
 
-    public void removeContact(Contact contact) {
-        contactDao.removeContact(contact);
+    public void removeContact(String phone) {
+        contactDao.removeContact(phone);
     }
 }

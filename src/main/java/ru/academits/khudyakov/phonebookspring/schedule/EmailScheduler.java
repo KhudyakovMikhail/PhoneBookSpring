@@ -1,4 +1,4 @@
-package ru.academits.schedule;
+package ru.academits.khudyakov.phonebookspring.schedule;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;

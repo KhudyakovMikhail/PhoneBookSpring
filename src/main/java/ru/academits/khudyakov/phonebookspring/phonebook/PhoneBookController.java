@@ -37,6 +37,7 @@ public class PhoneBookController {
     @RequestMapping(value = "removeContact", method = RequestMethod.POST)
     @ResponseBody
     public void removeContact(@RequestBody String phone) {
+        phone = phone.replace("\"", "");
         contactService.removeContact(phone);
     }
 }

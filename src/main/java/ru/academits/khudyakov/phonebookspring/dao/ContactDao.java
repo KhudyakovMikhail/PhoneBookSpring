@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 import ru.academits.khudyakov.phonebookspring.model.Contact;
-import ru.academits.khudyakov.phonebookspring.service.ContactService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -38,8 +37,6 @@ public class ContactDao {
     }
 
     public void removeContact(String phone) {
-        phone = phone.replace("\"", "");
-
         for (Contact contact : contactList) {
             if (contact.getPhone().equals(phone)) {
                 contactList.remove(contact);
